@@ -1,100 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-var buttonColours = ["red", "blue", "green", "yellow"];
+<head>
+  <meta charset="utf-8">
+  <title>Simon-Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
 
-var gamePattern = [];
-var userClickedPattern = [];
+<body>
+  <div class="welcome">
+    <h1>Welcome to the Simon-Game</h1>
+    <button class="rules1" id="rules">Rules</button>
+  </div>
+  <div class="rules">
+    <h1>Rules</h1>
+    <ul class="ul1">
+      <li>Press START to enter the game. Simon will give the first signal. Repeat the signal by pressing the same color lens.
+      </li>
+      <li>
+        Simon will duplicate the first signal and add one. Repeat these two signals by pressing the same color lenses, in order
+      </li>
+      <li>
+        Simon will duplicate these first two signals and add one.
+      </li>
+      <li>Continue playing as long as you can repeat each sequence of signals correctly.
+      </li>
+      <li>
+        If you fail to repeat a sequence exactly, Simon responds with a "RAZZ" sound. This means you've lost, and the sequence of signals ends.
+      </li>
+    </ul>
+    <button id="start1">Go To Game</button>
 
-var started = false;
-var level = 0;
+  </div>
+  <div class="game">
+    <button id="start">Start</button>
+    <button id="start2">Rules</button>
+  <h1 id="level-title">Press START button to Start</h1>
+  <div class="container">
+    <div class="row">
 
-$("#start").click(function() {
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
-  }
-});
+      <div type="button" id="green" class="btn green">
 
-$(".btn").click(function() {
+      </div>
 
-  var userChosenColour = $(this).attr("id");
-  userClickedPattern.push(userChosenColour);
+      <div type="button" id="red" class="btn red">
 
-  playSound(userChosenColour);
-  animatePress(userChosenColour);
+      </div>
+    </div>
 
-  checkAnswer(userClickedPattern.length-1);
-});
+    <div class="row">
 
-function checkAnswer(currentLevel) {
+      <div type="button" id="yellow" class="btn yellow">
 
-    if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-      if (userClickedPattern.length === gamePattern.length){
-        setTimeout(function () {
-          nextSequence();
-        }, 1000);
-      }
-    } else {
-      playSound("wrong");
-      $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Start to Restart");
+      </div>
+      <div type="button" id="blue" class="btn blue">
 
-      setTimeout(function () {
-        $("body").removeClass("game-over");
-      }, 200);
+      </div>
 
-      startOver();
-    }
-}
+    </div>
 
+  </div>
+  <button id="home">Quit</button>
+  </div>
+  <footer> <a href="https://dhanushrajagopal.github.io/cv/"> 🕹️Raja.R.Dhanush🕹️</a></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="game.js" charset="utf-8"></script>
 
-function nextSequence() {
-  userClickedPattern = [];
-  level++;
-  $("#level-title").text("Level " + level);
-  var randomNumber = Math.floor(Math.random() * 4);
-  var randomChosenColour = buttonColours[randomNumber];
-  gamePattern.push(randomChosenColour);
+</body>
 
-  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-  playSound(randomChosenColour);
-}
-
-function animatePress(currentColor) {
-  $("#" + currentColor).addClass("pressed");
-  setTimeout(function () {
-    $("#" + currentColor).removeClass("pressed");
-  }, 100);
-}
-
-function playSound(name) {
-  var audio = new Audio("sounds/" + name + ".mp3");
-  audio.play();
-}
-
-function startOver() {
-  level = 0;
-  gamePattern = [];
-  started = false;
-}
-$(".rules").hide();
-$(".game").hide();
-$("#rules").click(function(){
-    $(".welcome").hide();
-    $(".rules").show();    
-});
-$("#start1").click(function(){
-    $(".rules").hide();
-    $(".game").show();
-})
-$("#start2").click(function(){
-    $(".welcome").hide();
-    $(".rules").show();  
-    $(".game").hide();
-});
-$("#home").click(function(){
-    $(".rules").hide();
-    $(".game").hide();
-    $(".welcome").show();
-
-});
+</html>
