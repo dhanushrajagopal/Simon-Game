@@ -52,7 +52,7 @@ body {
   background-color: grey;
 }
 .welcome{
-  font-family:  cursive;
+  font-family:  'Roboto', sans-serif;
   color: beige;
   font-size: 350%;
   
@@ -66,7 +66,7 @@ body {
 
 }
 .rules{
-  font-family: cursive;
+  font-family: 'Roboto', sans-serif;
   color: azure;
 }
 .ul1{
