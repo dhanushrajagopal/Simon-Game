@@ -1,0 +1,121 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container1 {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+.welcome{
+  font-family:  cursive;
+  color: beige;
+  font-size: 350%;
+  
+  text-align: center;
+}
+.rules1{
+  padding:2% 5%;
+  font-size: 70%;
+  font-family: 'Press Start 2P', cursive;
+  background-color: lightblue;
+
+}
+.rules{
+  font-family: cursive;
+  color: azure;
+}
+.ul1{
+text-align: left;
+font-size: 2rem;
+
+}
+#start1{
+  padding: 2% 5%;
+  font-size: 200%;
+  background-color: lightblue;
+  font-family: 'Press Start 2P', cursive;
+
+}
+#start{
+  padding: 2% 5%;
+  font-size: 200%;
+  background-color: lightblue;
+  font-family: 'Press Start 2P', cursive;
+}
+#start2{
+  padding: 2% 5%;
+  font-size: 200%;
+  background-color: lightblue;
+  font-family: 'Press Start 2P', cursive;
+}
+#home{
+  padding: 2% 5%;
+  font-size: 200%;
+  background-color: lightblue;
+  font-family: 'Press Start 2P', cursive;
+}
+@media screen and (max-width:1024px){
+  .welcome{
+    margin-top: 50%;
+  }
+  .game{
+    margin-top:30%;
+
+  }
+}
+a{
+  text-decoration: none;
+  color: azure;
+}
+footer{
+  
+  margin-top: 40vh;
+  font-size: 200%;
+  font-family: 'Press Start 2P', cursive;
+ 
+}
